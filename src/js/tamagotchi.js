@@ -42,7 +42,7 @@ export class Tamagotchi {
   }
 
   feedMeal() {
-      this.food += 10;
+    this.food += 10;
   }
 
   feedSnack() {
