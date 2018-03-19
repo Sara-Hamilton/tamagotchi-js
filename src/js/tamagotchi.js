@@ -2,73 +2,61 @@ export class Tamagotchi {
 
   constructor(name) {
     this.name = name;
-    this.hunger = 15;
-    this.happiness = 15;
-    this.sleepiness = 15;
+    this.food = 15;
+    this.play = 15;
+    this.sleep = 15;
   }
 
-  setHunger() {
+  setFood() {
     setInterval(() => {
-      this.hunger--;
+      this.food--;
     }, 1000);
   }
 
-  setHappiness() {
+  setPlay() {
     setInterval(() => {
-      this.happiness--;
+      this.play--;
     }, 3000);
   }
 
-  setSleepiness() {
+  setSleep() {
     setInterval(() => {
-      this.sleepiness--;
+      this.sleep--;
     }, 5000);
   }
 
   // didYouGetEaten() {
-  // if (this.hunger > 0) {
+  // if (this.food > 0) {
   //     return false;
   //   } else {
   //     return true;
   //   }
   // }
 
-  feed() {
-      this.hunger = 10;
-    }
+  feedMeal() {
+      this.food += 10;
   }
 
+  feedSnack() {
+    this.food += 2;
+    this.play += 2;
+  }
 
-  // export let bear = {
-  //   foodLevel: 10,
-  //   setHunger: function() {
-  //     const hungerInterval = setInterval(() => {
-  //       this.foodLevel--;
-  //       if (this.didYouGetEaten() == true) {
-  //         clearInterval(hungerInterval);
-  //         return "You got eaten!";
-  //       }
-  //     }, 1000);
-  //   },
-  //   didYouGetEaten: function() {
-  //     if (this.foodLevel > 0) {
-  //       return false;
-  //     } else {
-  //       return true;
-  //     }
-  //   },
-  //   feed: function(amount) {
-  //     let that = this;
-  //     return function(food) {
-  //       that.foodLevel += amount
-  //       return `The bear ate the ${food}! Food level goes up ${amount}!`
-  //     }
-  //   }
-  // };
-  //
-  // bear.eatSmall = bear.feed(5);
+  playWith() {
+    this.food +=2;
+    this.play +=5;
+    this.sleep -=5;
+  }
 
-  // function(food) {
-  //     this.foodLevel += 5
-  //     return `The bear ate the ${food}! Food level goes up 5!`
-  //   }
+  takeNap() {
+    this.food -=2;
+    this.sleep +=3;
+  }
+
+  goToSleep() {
+    this.hunger -=5;
+    this.play -=5;
+    this.sleep +=5;
+  }
+
+}
