@@ -5,6 +5,8 @@ $(document).ready(function() {
   $('#name-form').submit(function(event) {
     event.preventDefault();
     const name = $("#name").val();
+    $("#name-form").hide();
+    $(".game").show();
 
     let tamagotchi = new Tamagotchi(name);
     tamagotchi.setFood();
@@ -40,6 +42,12 @@ $(document).ready(function() {
     $("#goto-sleep").click(function() {
       tamagotchi.goToSleep();
       tamagotchi.refreshView();
+    });
+
+    $("#pause-game").click(function() {
+      clearInterval(tamagotchi.setFood());
+      clearInterval(tamagotchi.setPlay());
+      clearInterval(tamagotchi.setSleep());
     });
 
   });

@@ -8,6 +8,9 @@
   </head>
   <body>
     <div class="container">
+      <div class="jumbotron">
+        <h1>Tamagotchi</h1>
+      </div>
       <form id="name-form">
         <label for="name">Name Your Pet!</label>
         <input type="text" id="name">
@@ -16,28 +19,29 @@
 
       <div class="game">
         <div class="row">
-          <div class="col-md-4">
-          </div>
-          <div class="col-md-4">
-            <h1><span id="pet-name"></span></h1>
-          </div>
+          <h1><span id="pet-name"></span></h1>
         </div>
         <div class="row">
-          <div class="col-md-4">
-            <h3>Food: <span id="food"></span></h3>
-          </div>
-          <div class="col-md-4">
-            <h3>Play: <span id="play"></span></h3>
-          </div>
-          <div class="col-md-4">
-            <h3>Sleep: <span id="sleep"></span></h3>
-          </div>
+          <h3>Food: <span id="food"></span></h3>
         </div>
+        <div class="row">
+          <h3>Play: <span id="play"></span></h3>
+        </div>
+        <div class="row">
+          <h3>Sleep: <span id="sleep"></span></h3>
+        </div>
+
         <button type="button" id="feed-meal" class="btn btn-primary">Feed a Meal</button>
         <button type="button" id="feed-snack" class="btn btn-primary">Feed a Snack</button>
         <button type="button" id="play-with" class="btn btn-primary">Play</button>
         <button type="button" id="take-nap" class="btn btn-primary">Take a Nap</button>
         <button type="button" id="goto-sleep" class="btn btn-primary">Go to Sleep</button>
+        <button type="button" id="pause-game" class="btn btn-primary">Pause Game</button>
+
+        <div class="dead">
+          <h3><span id="dead"></span></h3>
+        </div>
+
       </div>
     </div>
   </body>

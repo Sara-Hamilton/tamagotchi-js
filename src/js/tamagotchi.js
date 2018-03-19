@@ -25,22 +25,6 @@ export class Tamagotchi {
     }, 5000);
   }
 
-  didYouStarve() {
-  if (this.food > 0) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  didYouDie() {
-  if (this.food <= 0 || this.play <= 0 || this.sleep <= 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   feedMeal() {
     this.food += 10;
   }
@@ -67,11 +51,27 @@ export class Tamagotchi {
     this.sleep +=5;
   }
 
-  refreshView() {
-    setInterval(() => {
+  didYouDie() {
+    if (this.food < 0 || this.play < 0 || this.sleep < 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  displayResults() {
+    if (!this.didYouDie()) {
       $("#food").text(this.food);
       $("#play").text(this.play);
       $("#sleep").text(this.sleep);
+    } else {
+      $("#dead").text(`${this.name} is dead!!!`)
+    }
+  }
+
+  refreshView() {
+    setInterval(() => {
+      this.displayResults();
     }, 1000);
   }
 

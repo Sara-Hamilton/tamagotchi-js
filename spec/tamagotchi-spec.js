@@ -37,18 +37,13 @@ describe('Tamagotchi', function() {
     expect(epigotchi.sleep).toEqual(14);
   });
 
-  it('should starve if food level drops below zero', function() {
-    epigotchi.food = 0;
-    expect(epigotchi.didYouStarve()).toEqual(true);
+  it('should die if 16 seconds pass without feeding', function() {
+    jasmine.clock().tick(16001);
+    expect(epigotchi.didYouDie()).toEqual(true);
   });
 
-  it('should starve if 15 seconds pass without feeding', function() {
-    jasmine.clock().tick(15001);
-    expect(epigotchi.didYouStarve()).toEqual(true);
-  });
-
-  it('should die if food, play, or sleep is equal to or less than 0', function() {
-    epigotchi.play = 0;
+  it('should die if food, play, or sleep is less than 0', function() {
+    epigotchi.play = -1;
     expect(epigotchi.didYouDie()).toEqual(true);
   });
 
@@ -82,5 +77,13 @@ describe('Tamagotchi', function() {
     expect(epigotchi.play).toEqual(10);
     expect(epigotchi.sleep).toEqual(20);
   });
+
+  // it('should pause the game', function() {
+  //   jasmine.clock().tick(1001);
+  //   expect(epigotchi.food).toEqual(14);
+  //   epigotchi.pauseGame();
+  //   jasmine.clock().tick(5001);
+  //   expect(epigotchi.food).toEqual(14);
+  // });
 
 });
