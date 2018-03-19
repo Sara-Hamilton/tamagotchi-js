@@ -25,13 +25,21 @@ export class Tamagotchi {
     }, 5000);
   }
 
-  // didYouGetEaten() {
-  // if (this.food > 0) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
+  didYouStarve() {
+  if (this.food > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  didYouDie() {
+  if (this.food <= 0 || this.play <= 0 || this.sleep <= 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   feedMeal() {
       this.food += 10;
@@ -54,7 +62,7 @@ export class Tamagotchi {
   }
 
   goToSleep() {
-    this.hunger -=5;
+    this.food -=5;
     this.play -=5;
     this.sleep +=5;
   }
