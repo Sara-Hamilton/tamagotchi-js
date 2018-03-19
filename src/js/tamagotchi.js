@@ -67,4 +67,12 @@ export class Tamagotchi {
     this.sleep +=5;
   }
 
+  refreshView() {
+    setInterval(() => {
+      $("#food").text(this.food);
+      $("#play").text(this.play);
+      $("#sleep").text(this.sleep);
+    }, 1000);
+  }
+
 }
