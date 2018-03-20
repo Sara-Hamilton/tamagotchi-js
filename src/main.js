@@ -13,11 +13,12 @@ $(document).ready(function() {
 
     getCurrentWeather(location);
 
-    //javascript, jQuery
+    //javascript, jQuery method
     // var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=Igbr3fBtwa40uV6k99W47MTTplp9CxLa&limit=5");
-    // xhr.done(function(data) { console.log("success got data", data); });
-    // xhr.done(function(data) { $('.image1').html(`This is a Tamagotchi image ${data["0"].images.original.url}`);});
-    // // $('.image1').text(`This is a Tamagotchi image ${xhr[0].images.original.url}`);
+    // xhr.done(function(results) { console.log("success got results", results); });
+    // xhr.done(function(results) { $('#giphy').html(`<img class="resize" src= ${results.data["0"].images.original.url}>`); });
+
+    // AJAX method
     getGiphy();
     let changePics = setInterval(getGiphy, 3000);
 
