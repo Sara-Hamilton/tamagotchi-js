@@ -12,6 +12,10 @@ $(document).ready(function() {
 
     getCurrentWeather(location);
 
+    //javascript, jQuery
+    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=Igbr3fBtwa40uV6k99W47MTTplp9CxLa&limit=5");
+    xhr.done(function(data) { console.log("success got data", data); });
+
     let tamagotchi = new Tamagotchi(name);
     tamagotchi.setFood();
     tamagotchi.setPlay();
