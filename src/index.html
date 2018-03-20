@@ -15,13 +15,17 @@
         <label for="name">Name Your Pet!</label>
         <input type="text" id="name">
         <label for="location">Where does your Tamagotchi live?</label>
-        <input type="text" name="location">
+        <input type="text" name="location" id="location">
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
       <div class="game">
         <div class="row">
           <h1><span id="pet-name"></span></h1>
+          <h3><span id="pet-location"></span></h3>
+          <p class="showHumidity"></p>
+          <p class="showTemp"></p>
+          <p class="errors"></p>
         </div>
         <div class="row">
           <h3>Food: <span id="food"></span></h3>
