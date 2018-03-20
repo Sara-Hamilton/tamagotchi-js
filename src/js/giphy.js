@@ -7,7 +7,7 @@ export function getGiphy() {
       format: 'json'
     },
     success: function(response) {
-      let random = Math.floor(Math.random()* 4) + 1;
+      let random = Math.floor(Math.random()* 4);
       let reply = response.data[random].images.original.url;
       $('#giphy').html(`<img class="resize" src= ${reply}>`);
     },

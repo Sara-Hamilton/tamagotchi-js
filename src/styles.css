@@ -7,3 +7,18 @@
   height: 300px;
   overflow: hidden;
 }
+
+body {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 24px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: #ccccff;
+  color: white;
+}
+
+.btn {
+  font-family: 'Finger Paint', cursive;
+}

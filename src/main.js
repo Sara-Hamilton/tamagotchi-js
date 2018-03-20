@@ -15,11 +15,11 @@ $(document).ready(function() {
     getCurrentWeather(location);
 
     //javascript, jQuery method
-    getVanillaGiphy();
+    // getVanillaGiphy();
 
     // AJAX method
-    // getGiphy();
-    // let changePics = setInterval(getGiphy, 3000);
+    getGiphy();
+    let changePics = setInterval(getGiphy, 3000);
 
 
     let tamagotchi = new Tamagotchi(name);
