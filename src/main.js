@@ -5,6 +5,7 @@ $(document).ready(function() {
   $('#name-form').submit(function(event) {
     event.preventDefault();
     const name = $("#name").val();
+    const location = $("#location").val();
     $("#name-form").hide();
     $(".game").show();
 
