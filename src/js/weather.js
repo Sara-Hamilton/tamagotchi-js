@@ -4,7 +4,7 @@ export function getCurrentWeather(location) {
     // default = kelvin
     // &unitsimperial = fahrenheit
     // &unitsmetric = celcius
-     `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=2668c07da7e23016b049c1d4656f0af8&units=imperial`,
+     `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${process.env.WeatherKey}&units=imperial`,
     type: 'GET',
     data: {
       format: 'json'

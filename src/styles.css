@@ -1,3 +1,9 @@
 .game {
   display: none;
 }
+
+.resize {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}

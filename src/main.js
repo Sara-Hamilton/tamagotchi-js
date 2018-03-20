@@ -1,6 +1,7 @@
 import { Tamagotchi } from './js/tamagotchi.js';
 import './styles.css';
 import { getCurrentWeather } from './js/weather.js';
+import { getGiphy } from './js/giphy.js';
 
 $(document).ready(function() {
   $('#name-form').submit(function(event) {
@@ -13,8 +14,13 @@ $(document).ready(function() {
     getCurrentWeather(location);
 
     //javascript, jQuery
-    var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=Igbr3fBtwa40uV6k99W47MTTplp9CxLa&limit=5");
-    xhr.done(function(data) { console.log("success got data", data); });
+    // var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=tamagotchi&api_key=Igbr3fBtwa40uV6k99W47MTTplp9CxLa&limit=5");
+    // xhr.done(function(data) { console.log("success got data", data); });
+    // xhr.done(function(data) { $('.image1').html(`This is a Tamagotchi image ${data["0"].images.original.url}`);});
+    // // $('.image1').text(`This is a Tamagotchi image ${xhr[0].images.original.url}`);
+    getGiphy();
+    let changePics = setInterval(getGiphy, 3000);
+
 
     let tamagotchi = new Tamagotchi(name);
     tamagotchi.setFood();
