@@ -1,5 +1,6 @@
 import { Tamagotchi } from './js/tamagotchi.js';
 import './styles.css';
+import { getCurrentWeather } from './js/weather.js';
 
 $(document).ready(function() {
   $('#name-form').submit(function(event) {
@@ -9,20 +10,7 @@ $(document).ready(function() {
     $("#name-form").hide();
     $(".game").show();
 
-    $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=2668c07da7e23016b049c1d4656f0af8`,
-      type: 'GET',
-      data: {
-        format: 'json'
-      },
-      success: function(response) {
-        $('.showHumidity').text(`The humidity in ${location} is ${response.main.humidity}%`);
-        $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp}.`);
-      },
-      error: function() {
-        $('.errors').text(`The weather conditions in ${location} are unknown.`)
-      }
-    });
+    getCurrentWeather(location);
 
     let tamagotchi = new Tamagotchi(name);
     tamagotchi.setFood();
