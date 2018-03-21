@@ -18,3 +18,13 @@ export function getCurrentWeather(location) {
     }
   });
 }
+
+
+// export function getCurrentWeather(location) {
+//     $.get(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${process.env.WeatherKey}&units=imperial`).then(function(response) {
+//       $('.showHumidity').text(`The humidity in ${location} is ${response.main.humidity}%`);
+//       $('.showTemp').text(`The temperature in ${location} is ${response.main.temp} fahrenheit.`);
+//     }).fail(function(error) {
+//       $('.errors').text(`The weather conditions in ${location} are unknown.`);
+//     });
+//   }
